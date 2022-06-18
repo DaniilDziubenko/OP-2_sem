@@ -21,7 +21,7 @@ class Persone {
 		string name, surname, middleName, birthDate;
 };
 
-vector<Persone> inputInformation(vector<Persone> array, int n, string name, string surname, string middleName, string birthDate);
+vector<Persone> inputInformation(vector<Persone> array, int n);
 string checkInformation(string inf);
 string checkDate(string date);
 void printHappyDayPersone(vector<Persone> array, int n);

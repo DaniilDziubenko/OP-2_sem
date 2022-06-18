@@ -7,9 +7,7 @@ Persone::Persone(string name, string surname, string middleName, string birthDat
 	this->birthDate = birthDate;
 }
 
-Persone::Persone() {
-	cout << "\nEmpty class\n";
-}
+Persone::Persone() {}
 
 void Persone::setName(string name) {
 	this->name = name;
@@ -43,7 +41,8 @@ string Persone::getBirthDate() {
 	return birthDate;
 }
 
-vector<Persone> inputInformation(vector<Persone> array, int n, string name, string surname, string middleName, string birthDate) {
+vector<Persone> inputInformation(vector<Persone> array, int n) {
+	string name, surname, middleName, birthDate;
 	for (int i = 0; i < n; i++)
 	{
 		cout << "\nEnter name: ";

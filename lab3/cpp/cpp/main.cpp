@@ -5,11 +5,10 @@ using namespace std;
 
 void main() {
 	int n;
-	string name, surname, middleName, birthDate;
 	cout << "Enter number of people: ";
 	cin >> n;
 	vector<Persone> array;
-	array = inputInformation(array, n, name, surname, middleName, birthDate);
+	array = inputInformation(array, n);
 	printHappyDayPersone(array, n);
 
 	system("pause");
