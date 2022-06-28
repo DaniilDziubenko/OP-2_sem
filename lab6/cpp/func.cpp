@@ -71,7 +71,7 @@ void printTree(Tree* tree, int count) {
 }
 
 void recursionDestructor(Tree* current) {
-	if (current->left) recursionDestructor(current->left);
+	if (current->right) recursionDestructor(current->right);
 	if (current->left) recursionDestructor(current->left);
 	delete current;
 }

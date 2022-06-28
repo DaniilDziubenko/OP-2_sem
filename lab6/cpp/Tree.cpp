@@ -2,6 +2,6 @@
 #include "func.h"
 
 Tree::~Tree() {
-	recursionDestructor(left);
 	recursionDestructor(right);
+	recursionDestructor(left);
 }

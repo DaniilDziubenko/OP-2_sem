@@ -2,26 +2,22 @@
 
 int main() {
 	srand(time(NULL));
+	
+	TMatrix* arr[]{new SquareMatrix2Order(), new SquareMatrix3Order()};
+	double sum = 0;
 
-	double a, b, sum, s;
-	SquareMatrix2Order matrixB;
-	SquareMatrix3Order matrixA;
+	for (auto elem : arr) {
+		cout << "\nMatrix:\n";
+		elem->printMatrix();
+		cout << "\nMatrix determinant: " << elem->getDeterminant() << endl;
+		cout << "Sum of elements: " << elem->getSumOfElements() << endl;
+		sum += elem->getDeterminant();
+		if (dynamic_cast<SquareMatrix3Order*>(elem)) {
+			sum += elem->getSumOfElements();
+		}
+	}
 
-	cout << "Matrix A:\n";
-	matrixA.printMatrix();
-
-	cout << "\nMatrix B:\n";
-	matrixB.printMatrix();
-
-	a = matrixA.getDeterminant();
-	b = matrixB.getDeterminant();
-	sum = matrixA.getSumOfElements();
-	s = a + b + sum;
-
-	cout << "\nDet A: " << a << endl;
-	cout << "Det B: " << b << endl;
-	cout << "Sum of elements Matrix A: " << sum << endl;
-	cout << "\nS = " << s << endl;
+	cout << "\n\nS = " << sum << endl;
 
 	system("pause");
 	return 0;

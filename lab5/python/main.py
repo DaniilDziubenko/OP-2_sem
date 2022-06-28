@@ -1,19 +1,15 @@
 import classes
 
-matrixA = classes.SquareMatrix3Order()
-matrixB = classes.SquareMatrix2Order()
+listMatrix = [classes.SquareMatrix2Order(), classes.SquareMatrix3Order()]
+s = 0
 
-print("\nMatrix A:")
-matrixA.printMatrix()
-print("\nMatrix B:")
-matrixB.printMatrix()
+for elem in listMatrix:
+    print("\nMatrix:")
+    elem.printMatrix()
+    print(f"\nMatrix determinant: {elem.getDeterminant()}")
+    s += elem.getDeterminant()
+    print(f"Sum of elements Matrix: {elem.getSumOfElements()}")
+    if isinstance(elem, classes.SquareMatrix3Order):
+        s += elem.getSumOfElements()
 
-a = matrixA.getDeterminant()
-b = matrixB.getDeterminant()
-sumA = matrixA.getSumOfElements()
-s = a + b + sumA
-
-print(f"\nDeterminant Matrix A = {a}")
-print(f"Determinant Matrix B = {b}")
-print(f"Sum of elements Matrix A: {sumA}")
 print(f"\nS = {s}")
